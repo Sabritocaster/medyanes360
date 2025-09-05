@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+📝 Todo App (Next.js + Prisma + MongoDB + Zustand)
+Modern ve kullanıcı dostu bir Todo Uygulaması.Bu full-stack uygulama, Next.js App Router, Prisma ORM, MongoDB ve Zustand kullanılarak geliştirilmiştir.
 
-## Getting Started
+🚀 Özellikler
 
-First, run the development server:
+✅ Görev Ekleme: Başlık ve açıklama ile yeni görev oluşturma.
+✏️ Görev Düzenleme: Inline düzenleme ile hızlı güncelleme.
+🔄 Görev Tamamlama: Checkbox ile görev tamamlama/geri alma.
+❌ Görev Silme: Anında UI ve veritabanından silme.
+📦 Global State Yönetimi: Zustand ile hafif ve hızlı durum yönetimi.
+🎨 Modern UI: TailwindCSS ile gri arka plan ve beyaz kart tasarımı.
 
-```bash
+
+🛠️ Teknoloji Seti
+
+Next.js 15 (App Router) - Frontend ve backend framework.
+Prisma ORM - Veritabanı işlemleri için ORM.
+MongoDB Atlas - Bulut tabanlı NoSQL veritabanı.
+Zustand - Hafif global state yönetimi.
+Tailwind CSS - Stil ve tasarım için utility-first CSS framework.
+
+
+⚙️ Kurulum
+
+Repoyu Klonlayın:
+git clone https://github.com/Sabritocaster/medyanes360.git
+cd todo-app
+
+
+Bağımlılıkları Yükleyin:
+npm install
+
+
+.env.local Dosyası Oluşturun:MongoDB bağlantı stringinizi ve API URL’nizi ekleyin:
+DATABASE_URL="mongodb+srv://<kullanici>:<sifre>@cluster.mongodb.net/todos"
+NEXT_PUBLIC_API_URL="http://localhost:3000"
+
+
+Prisma’yı Ayarlayın:
+npx prisma generate
+npx prisma db push
+
+
+Projeyi Çalıştırın:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Uygulama http://localhost:3000 adresinde çalışacaktır.
 
-You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+📂 Proje Yapısı
 
-To learn more about Next.js, take a look at the following resources:
+app/
+ │ ├── api/
+ │ │   └── todos/        # GET ve POST işlemleri
+ │ │       └── [id]/     # PUT ve DELETE işlemleri
+ │ └── page.tsx          # Frontend UI
+store/
+ │   └── todoStore.ts      # Zustand state yönetimi
+services/
+     └── fetchAPI.ts       # API yardımcı fonksiyonları
+prisma/
+ └── schema.prisma         # Prisma veritabanı modeli
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+✨ Örnek Kullanım
 
-## Deploy on Vercel
+Görev Ekle: “Alışveriş yap” başlıklı bir görev ekleyin.
+Açıklama Ekle: “Süt, ekmek, yumurta” gibi detaylar girin.
+Tamamlama: Checkbox ile görevi tamamlandı olarak işaretleyin (üzeri çizilir).
+Düzenleme: ✏️ simgesiyle görevi düzenleyin.
+Silme: ❌ simgesiyle görevi silin.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🌐 Deploy
+https://medyanes360-p8rk.vercel.app/
+https://medyanes360-p8rk.vercel.app/api/todos
+
