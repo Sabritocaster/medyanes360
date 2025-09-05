@@ -1,5 +1,6 @@
 import { create } from "zustand";
-import { getApi, postApi, putApi, deleteApi } from "../../services/fetchAPI";
+import { getApi, postApi, putApi, deleteApi } from "../services/fetchAPI";
+
 
 
 type Todo = {

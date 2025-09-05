@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { useTodoStore } from "@/store/todoStore";
+import { useTodoStore } from "../store/todoStore";
 
 export default function Todos() {
   const { todos, fetchTodos, addTodo, toggleTodo, removeTodo, updateTodo } = useTodoStore();
@@ -96,7 +96,7 @@ export default function Todos() {
                     </button>
                     <button
                       onClick={() => setEditingId(null)}
-                      className="bg-white text-black font-bold px-3 py-1 rounded border border-2 border-gray-400 hover:bg-gray-400 cursor-pointer"
+                      className="bg-white text-black font-bold px-3 py-1 rounded border-2 border-gray-400 hover:bg-gray-400 cursor-pointer"
                     >
                       ❌ Cancel
                     </button>
